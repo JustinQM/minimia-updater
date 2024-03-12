@@ -46,7 +46,7 @@ else
 fi
 
 printf "\n" >> $log
-log "Running all update scripts..."
+log "Running all scripts..."
 for script in ${install_dir}/*.sh; do
 	if [ $script = "${install_dir}/update.sh" ]; then
 		continue
