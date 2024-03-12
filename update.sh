@@ -42,6 +42,7 @@ fi
 
 log "Update found!"
 
+git -C $install_dir stash
 download=$(git -C $install_dir pull 2>&1)
 log $download
 log "chmod +x directory..."
