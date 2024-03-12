@@ -17,7 +17,7 @@ If you want to add your custom scripts to your miniMIA, you can fork the autoupd
 
 2. SSH into your miniMIA
 ```
-ssh mia@mamamia
+ssh mia@minimia
 ```
 
 3. Login to root
