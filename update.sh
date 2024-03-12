@@ -17,16 +17,6 @@ function log
 	printf "[${time}] ${1}\n" >> $log
 }
 
-function update
-{
-	log "Update found!"
-
-	git -C $install_dir stash
-	git -C $install_dir pull >> $log
-	log "chmod +x directory..."
-	chmod -R +x "${install_dir}"
-}
-
 if ! test -f $log; then
 	touch $log
 fi
@@ -47,7 +37,12 @@ update=$(git -C $install_dir fetch --dry-run 2>&1)
 if [ -z "${update}" ]; then
 	log "No update found."
 else
-	update
+	log "Update found!"
+
+	git -C $install_dir stash
+	git -C $install_dir pull >> $log
+	log "chmod +x directory..."
+	chmod -R +x "${install_dir}"
 fi
 
 printf "\n" >> $log

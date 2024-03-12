@@ -14,7 +14,7 @@
 
 
 #Warnings
-#1. Do NOT Use Exit or any other command that will kill the script. This will kill the updater as well.
+#1. Do NOT Use Exit as this will kill the updater. Instead use Return.
 #2. ALWAYS use absolute paths. Crontab does not run from within the install directory
 
 #Example Script:
