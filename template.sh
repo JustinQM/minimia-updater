@@ -9,12 +9,12 @@
 #3. Always use log instead of printing to stdout.
 #	Ex. log "Hello World"
 
-#4. If you need to pipe input to log. First capture the output in a variable and then log it
+#4. If you need to pipe a commands output to log. First capture the output in a variable and then log it
 #	Ex. command=${ls -l}; log $command
 
 
 #Warnings
-#1. Do NOT Use Exit as this will kill the updater. Instead use Return.
+#1. Do NOT use exit as this will kill the updater. Instead use return.
 #2. ALWAYS use absolute paths. Crontab does not run from within the install directory
 
 #Example Script:
@@ -24,6 +24,8 @@ log "Checking if the template is within the install directory"
 if test -f "${install_dir}/template.sh"; then
 	log "Found Template! Removing!"
 	rm "${install_dir}/template.sh"
+	return
 else
 	log "Template not found"
+	return
 fi
