@@ -49,7 +49,7 @@ chmod -R +x "${install_dir}"
 
 printf "\n" >> $log
 log "Running all update scripts..."
-for script in *.sh; do
+for script in ${install_dir}/*.sh; do
 	if [ $script = "update.sh" ]; then
 		continue
 	fi
