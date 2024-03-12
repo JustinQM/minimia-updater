@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Constants
-install_dir="/usr/bin/minimia-installer"
+install_dir="/usr/bin/minimia-updater"
 log="${install_dir}/log"
 date=$(date +%D)
 time=$(date +%r)
