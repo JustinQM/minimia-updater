@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Constants
-install_dir="."
+install_dir="/usr/bin/minimia-installer"
 log="${install_dir}/log"
 date=$(date +%D)
 time=$(date +%r)
@@ -34,7 +34,7 @@ printf "\n" >> $log
 log "Checking for updates..."
 update=$(git -C $install_dir fetch --dry-run 2>&1)
 
-if [ -z $update ]; then
+if [ -z "${update}" ]; then
 	log "No update found."
 	#update is not required
 	exit
@@ -61,4 +61,6 @@ for script in *.sh; do
 	log "Finished Script ${script}\n"
 done
 
+log "Copying Log File to Mia User Home Directory"
+cp -f $log /home/mia/.log
 log "Update Finished Successfully!"
