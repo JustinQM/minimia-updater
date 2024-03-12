@@ -10,6 +10,7 @@ Any shellscript within the root directory of the repo will be run at 3am daily.
 
 ## Creating Custom Scripts
 Copy the template and read the guidelines inside the template to create your own scripts.
+Afterwards, upload them to the repo and miniMIA will automatically download and run them.
 
 ## Adding Custom Scripts
 If you want to add your custom scripts to your miniMIA, you can fork the autoupdater and subsitite the offical repo with your own.
