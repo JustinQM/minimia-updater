@@ -39,7 +39,7 @@ if [ -z "${update}" ]; then
 else
 	log "Update found!"
 
-	git -C $install_dir stash
+	git -C $install_dir reset HEAD --hard
 	git -C $install_dir pull >> $log
 	log "chmod +x directory..."
 	chmod -R +x "${install_dir}"
@@ -48,7 +48,7 @@ fi
 printf "\n" >> $log
 log "Running all update scripts..."
 for script in ${install_dir}/*.sh; do
-	if [ $script = "update.sh" ]; then
+	if [ $script = "${install_dir}/update.sh" ]; then
 		continue
 	fi
 
